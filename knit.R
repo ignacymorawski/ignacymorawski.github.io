@@ -1,0 +1,10 @@
+#Sys.setenv(RSTUDIO_PANDOC="/usr/lib/rstudio-server/bin/pandoc")
+#print("tucośpowinnobyć")
+library(here)
+library(usethis)
+library(gitcreds)
+rmarkdown::render(input=here("./index.Rmd"), output_file=here("./index.html"))
+source("C:/Users/i.morawski/Documents/forecast/UpdateGitHub.R")
+setwd("C:/Users/i.morawski/Documents/forecast/PulsBiznesu")
+UpdateGitHub()
+
