@@ -3,8 +3,8 @@
 library(here)
 library(usethis)
 library(gitcreds)
-rmarkdown::render(input=here("./index.Rmd"), output_file=here("./index.html"))
-source("C:/Users/i.morawski/Documents/forecast/UpdateGitHub.R")
-setwd("C:/Users/i.morawski/Documents/forecast/PulsBiznesu")
-UpdateGitHub()
+rmarkdown::render(input=here("./ignacymorawski.github.io/index.Rmd"), output_file=here("./ignacymorawski.github.io/index.html"))
+#source("C:/Users/i.morawski/Documents/forecast/UpdateGitHub.R")
+#setwd("C:/Users/i.morawski/Documents/forecast/PulsBiznesu")
+#UpdateGitHub()
 

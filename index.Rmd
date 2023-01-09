@@ -294,12 +294,12 @@ today<-as.Date(now2)
 <br/><br/>
 
 
-#### 1. Podsumowanie sesji
-
 
 ```{r,echo=FALSE,results='asis'}
 cat(paste0("- Ostatnia aktualizacja: ",Sys.time()+3600))
 ```
+
+#### 1. Podsumowanie sektorowe sesji i ostatnich dni
 
 
 
@@ -389,7 +389,7 @@ bp<-ggplot(p1,aes(x=date,y=Value))+
   theme(panel.background = element_rect(fill=clr1,color=clr1))+
   theme(axis.text=element_text(color="white"))+
   theme(plot.title=element_text(size=15,hjust=0.5,color="white"))+
-  theme(plot.subtitle=element_text(size=12,hjust=0.5,color="white"))+
+  theme(plot.subtitle=element_text(size=10,hjust=0.5,color="white"))+
   theme(plot.margin = margin(0.3,0.5,0.3,0,"cm"))+
   xlab("")+
   ylab("")+
