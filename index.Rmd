@@ -296,7 +296,7 @@ today<-as.Date(now2)
 
 
 ```{r,echo=FALSE,results='asis'}
-cat(paste0("- Ostatnia aktualizacja: ",Sys.time()+3600))
+cat(paste0("- Ostatnia aktualizacja: ",Sys.time()))
 ```
 
 #### 1. Podsumowanie sektorowe sesji i ostatnich dni
@@ -395,9 +395,9 @@ bp<-ggplot(p1,aes(x=date,y=Value))+
   ylab("")+
   labs(
     title=i,
-    subtitle=paste0("1 dzień: ",p1$sign1[3],round(p1$ch1[3],1),"%  ","7 dni: ",p1$sign2[3],round(p1$ch7[3],1),"%")
+    subtitle=paste0("1 dzień: ",p1$sign1[3],round(p1$ch1[3],1),"%     ","7 dni: ",p1$sign2[3],round(p1$ch7[3],1),"%")
   )+
-  scale_x_date(breaks=c(p1$date[1],p1$date[51]),labels=c(p1$date[1],p1$date[51]))
+  scale_x_date(breaks=c(p1$date[1],p1$date[49]),labels=c(p1$date[1],p1$date[51]))
 
 assign(paste0("bp",c),bp)
 c<-c+1
