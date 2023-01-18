@@ -47,8 +47,8 @@ library(gridExtra)
 
 ### UZUPEŁNIANIE DANYCH NC I WSE ###
 
-load(here("./ignacymorawski.github.io/data/wse.RData"))
-load(here("./ignacymorawski.github.io/data/nc.RData"))
+load("C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/data/wse.RData")
+load("C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/data/nc.RData")
 
 #TO ZROBIĆ NA KOŃCU 03.01.2023
 #source("C:/Users/i.morawski/Documents/forecast/UpdateGitHub.R")
@@ -83,7 +83,7 @@ print(lwse2[i])
 flush.console()
 }
 
-save(ws1,ws2,file=here("./ignacymorawski.github.io/data/wse.RData"))
+save(ws1,ws2,file="C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/data/wse.RData")
 }
 
 lnce<-tail(nc1$date,1)
@@ -108,10 +108,10 @@ for (i in seq(length(lnce2))){
   if (exists$exists==TRUE){
   
   download.file(paste0("https://newconnect.pl/pub/NEWCONNECT/statystyki/statystyki_dzienne/NC_",lnce3[i],".xls"),
-                destfile=here(paste0("./ignacymorawski.github.io/data/ncq/NC_",lnce3[i],".xls")),mode="wb")
+                destfile=paste0("C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/data/ncq/NC_",lnce3[i],".xls"),mode="wb")
     
   
-  u0<-read_excel(here(paste0("./ignacymorawski.github.io/data/ncq/NC_",lnce3[i],".xls")),3,skip=5,col_names = TRUE)
+  u0<-read_excel(paste0("C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/data/ncq/NC_",lnce3[i],".xls"),3,skip=5,col_names = TRUE)
 
   u2<-u0 %>% 
     select(Security,Closing,Trading...24) %>% 
@@ -139,12 +139,12 @@ for (i in seq(length(lnce2))){
 }
 
 
-save(nc1,nc2,file=here("./ignacymorawski.github.io/data/nc.RData"))
+save(nc1,nc2,file="C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/data/nc.RData")
 }
 
 #ind[7,2]<-"WIG.GAMES5"
 
-load(here("./ignacymorawski.github.io/data/sector.RData"))
+load("C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/data/sector.RData")
 lsec<-tail(sector$date,1)
 if (lsec<Sys.Date()){
 
@@ -172,7 +172,7 @@ print(lsec2[i])
 flush.console()
 }
 
-save(ind,sector,file=here("./ignacymorawski.github.io/data/sector.RData"))
+save(ind,sector,file="C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/data/sector.RData")
 }
 
 
@@ -583,7 +583,7 @@ turn0<-bind_rows(turn.plus,turn.minus) %>% select(c(1,2,3,6,7,8)) %>%
 ```{r, echo=FALSE, warning=FALSE,error=FALSE,message=FALSE,fig.width=11,fig.height=8}
 
 
-load(here("./ignacymorawski.github.io/data/wse.RData"))
+load("C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/data/wse.RData")
 
 m1<-tibble(
   spolka=colnames(ws2)[-c(1)],
@@ -717,7 +717,7 @@ print(bp3)
 ```{r, echo=FALSE, warning=FALSE,error=FALSE,message=FALSE,fig.width=11,fig.height=8}
 
 
-load(here("./ignacymorawski.github.io/data/nc.RData"))
+load("C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/data/nc.RData")
 
 mc1<-tibble(
   spolka=colnames(nc2)[-c(1)],

@@ -3,7 +3,7 @@
 library(here)
 library(usethis)
 library(gitcreds)
-rmarkdown::render(input=here("./ignacymorawski.github.io/index.Rmd"), output_file=here("./ignacymorawski.github.io/index.html"))
+rmarkdown::render(input="C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/index.Rmd", output_file="C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/index.html")
 setwd("C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io")
 system("git add --all")
 system(paste0("git commit -m \"",Sys.time(),"\""))
