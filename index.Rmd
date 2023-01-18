@@ -51,7 +51,7 @@ load(here("./ignacymorawski.github.io/data/wse.RData"))
 load(here("./ignacymorawski.github.io/data/nc.RData"))
 
 #TO ZROBIĆ NA KOŃCU 03.01.2023
-source("C:/Users/i.morawski/Documents/forecast/UpdateGitHub.R")
+#source("C:/Users/i.morawski/Documents/forecast/UpdateGitHub.R")
 
 
 lwse<-tail(ws1$date,1)
