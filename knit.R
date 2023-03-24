@@ -1,6 +1,7 @@
 #Sys.setenv(RSTUDIO_PANDOC="/usr/lib/rstudio-server/bin/pandoc")
 #print("tucośpowinnobyć")
-Sys.setenv(RSTUDIO_PANDOC="C:/Program Files/RStudio/bin/pandoc")
+# Sys.setenv(RSTUDIO_PANDOC="C:/Program Files/RStudio/bin/pandoc")
+Sys.setenv(RSTUDIO_PANDOC="C:/Users/j.morawski/AppData/Local/Pandoc")
 rmarkdown::render(input="C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/index.Rmd", output_file="C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io/index.html")
 setwd("C:/Users/j.morawski/Documents/ignacymorawski/ignacymorawski.github.io")
 system("git add --all")
