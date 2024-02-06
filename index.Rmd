@@ -125,7 +125,7 @@ for (i in seq(length(lnce2))){
     colnames(u5)<-c("date",u2$Security)
     u6<-u5 %>% mutate_at(c(1),~as.Date(.)) %>% mutate_at(c(-1),~as.numeric(gsub(",","",.)))
     nc1<-bind_rows(nc1,u6)
-    
+
     u4b<-t(u2$Turnover)
     u5b<-as_tibble(cbind(lnce2[i],u4b))
     colnames(u5b)<-c("date",u2$Security)
@@ -826,7 +826,7 @@ n1<-tibble(
 
 tab2<-tibble(spolka=tables0b$`Nazwa AD`,
               kurs=gsub(",",".",tables0b$`Kurs AD`),
-              obroty=gsub(",",".",tables0b$`Obrót AD`)
+              obroty=gsub(" ","", gsub(",",".",tables0b$`Obrót AD`))
 ) %>% 
   mutate_at(c("kurs"),~as.numeric(.)) %>% 
   mutate_at(c("obroty"),~as.numeric(gsub("\\s","",.)))
@@ -834,7 +834,7 @@ tab2<-tibble(spolka=tables0b$`Nazwa AD`,
 n2a<-n1 %>% 
   left_join(tab2,by=c("spolka")) %>% 
   mutate(ratio=kurs/max) %>%
-  arrange(desc(ratio,obroty)) %>% 
+  arrange(desc(ratio),desc(obroty)) %>% 
   filter(turn>500000) %>% 
   head(30) %>% 
   filter(sd>0 & last>as.Date("2020-11-01")) %>% 
